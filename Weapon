@@ -1,0 +1,131 @@
+function PlayerClick1()
+     local ranBullet = math.Random("1", "2", "3", "4", "5", "6", "7", "8", "9", "10")
+     
+     if script.Parent.BulletValue.value == ranBullet then
+          local light = Instance.new("PointLight")
+     
+          light.Enabled = false 
+          light.Color = Color3.fromRGB(250, 255, 115)
+          light.Brightness = 2 
+          light.Range = 4
+     
+          light.Enabled = true
+          script.Parent.GunShotSound:Play()
+          wait(0.05)
+          light:Destroy()
+     else
+          script.Parent.GunClick:Play()
+     end
+end
+
+function PlayerClick2()
+     local ranBullet = math.Random("1", "2", "3", "4", "5", "6", "7", "8", "9", "10")
+     
+     if script.Parent.BulletValue.value == ranBullet then
+          local light = Instance.new("PointLight")
+     
+          light.Enabled = false 
+          light.Color = Color3.fromRGB(250, 255, 115)
+          light.Brightness = 2 
+          light.Range = 4
+     
+          light.Enabled = true
+          script.Parent.GunShotSound:Play()
+          wait(0.05)
+          light:Destroy()
+     else
+          script.Parent.GunClick:Play()
+     end
+end
+
+function PlayerClick3()
+     local ranBullet = math.Random("1", "2", "3", "4", "5", "6", "7", "8", "9", "10")
+     
+     if script.Parent.BulletValue.value == ranBullet then
+          local light = Instance.new("PointLight")
+     
+          light.Enabled = false 
+          light.Color = Color3.fromRGB(250, 255, 115)
+          light.Brightness = 2 
+          light.Range = 4
+     
+          light.Enabled = true
+          script.Parent.GunShotSound:Play()
+          wait(0.05)
+          light:Destroy()
+     else
+          script.Parent.GunClick:Play()
+     end
+end
+
+function PlayerClick4()
+     local ranBullet = math.Random("1", "2", "3", "4", "5", "6", "7", "8", "9", "10")
+     
+     if script.Parent.BulletValue.value == ranBullet then
+          local light = Instance.new("PointLight")
+     
+          light.Enabled = false 
+          light.Color = Color3.fromRGB(250, 255, 115)
+          light.Brightness = 2 
+          light.Range = 4
+     
+          light.Enabled = true
+          script.Parent.GunShotSound:Play()
+          wait(0.05)
+          light:Destroy()
+     else
+          script.Parent.GunClick:Play()
+     end
+end
+
+function PlayerClick5()
+     local ranBullet = math.Random("1", "2", "3", "4", "5", "6", "7", "8", "9", "10")
+     
+     if script.Parent.BulletValue.value == ranBullet then
+          local light = Instance.new("PointLight")
+     
+          light.Enabled = false 
+          light.Color = Color3.fromRGB(250, 255, 115)
+          light.Brightness = 2 
+          light.Range = 4
+     
+          light.Enabled = true
+          script.Parent.GunShotSound:Play()
+          wait(0.05)
+          light:Destroy()
+     else
+          script.Parent.GunClick:Play()
+     end
+end
+
+function PlayerClick6()
+     local ranBullet = math.Random("1", "2", "3", "4", "5", "6", "7", "8", "9", "10")
+     
+     if script.Parent.CurrentBullet.value == script.Parent.BulletValue.value then
+          local light = Instance.new("PointLight")
+     
+          light.Enabled = false 
+          light.Color = Color3.fromRGB(250, 255, 115)
+          light.Brightness = 2 
+          light.Range = 4
+     
+          light.Enabled = true
+          script.Parent.GunShotSound:Play()
+          wait(0.05)
+          light:Destroy()
+          
+          script.Parent.CurrentBullet.value = script.Parent.CurrentBullet+1
+     else
+          script.Parent.GunClick:Play()
+          script.Parent.CurrentBullet.value = script.Parent.CurrentBullet+1
+     end
+end
+
+
+
+game.Workspace.Hitboxes.Hitbox1.MouseButton1Click:Connect(PlayerClick1)
+game.Workspace.Hitboxes.Hitbox2.MouseButton1Click:Connect(PlayerClick2)
+game.Workspace.Hitboxes.Hitbox3.MouseButton1Click:Connect(PlayerClick3)
+game.Workspace.Hitboxes.Hitbox4.MouseButton1Click:Connect(PlayerClick4)
+game.Workspace.Hitboxes.Hitbox5.MouseButton1Click:Connect(PlayerClick5)
+game.Workspace.Hitboxes.Hitbox6.MouseButton1Click:Connect(PlayerClick6)
