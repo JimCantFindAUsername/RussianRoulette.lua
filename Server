@@ -1,0 +1,139 @@
+while true do 
+     if game.ReplicatedStorage.Values.roundPlaying == false then
+          game.ReplicatedStorage.Values.Timer.timerPlaying = true 
+     end
+end
+
+
+while true do 
+     game.Players.localPlayer.playerGUI.timer.timerUI.Time.text = timer.Min.value":"timer.Sec.value
+     
+     if game.ReplicatedStorage.Values.Timer.timerPlaying == true then
+
+          local timer = game.ReplicatedStorage.Values.Timer
+          
+          timer.Min.value = 00
+          timer.Sec.value = 30
+          
+          while true do
+               wait(1)
+               timer.Sec.value = timer.Sec.value -1
+          end
+          
+          while true do 
+               if timer.Sec.value == 0 then
+                    wait(1)
+                    game.ReplicatedStorage.Values.Timer.timerPlaying = false
+                    game.ReplicatedStorage.Values.roundPlaying = true
+               end
+          end
+     end
+end
+
+
+
+function join()
+     game.ServerStorage.Values.plrCount.value = game.ServerStorage.Values.plrCount.value +1
+end
+
+function Leave()
+     game.ServerStorage.Values.plrCount.value = game.ServerStorage.Values.plrCount.value -1
+end
+
+game.Players.childRemoved:Connect(Leave)
+game.Players.childAdded:Connect(join)
+
+
+
+while true do 
+     if game.ReplicatedStorage.Values.roundPlaying == true then
+          local Bottle = game.Workspace.Bottle.bottle 
+          local Gun = game.Workspace.Bottle.Gun
+          local ranPlr = math.Random(game.Players:GetChildren())
+          
+          local ranPlr2 = math.Random(game.Players:GetChildren())
+          
+          local ranPlr3 = math.Random(game.Players:GetChildren())
+          
+          local ranPlr4 = math.Random(game.Players:GetChildren())
+          
+          local ranPlr5 = math.Random(game.Players:GetChildren())
+          
+          local ranPlr6 = math.Random(game.Players:GetChildren())
+          local #plrs = game.ServerStorage.Values.plrCount.value
+          
+          ranPlr.Parent = math.Random(game.Workspace.Seats:GetChildren("Seat"))
+          
+          game.Players.localPlayer.playerGUI.timer.Enabled = false
+          
+          while true do
+          
+               Bottle.Rotation.x = Bottle.Rotation.x+1
+               
+               funtion plrT(function((player)
+                    if plrT.Player == ranPlr2 then
+                         Gun.parent = ranPlr2
+                         Gun.Active = true
+                         
+                         local scripts = game.ServerScriptStorage.PlrHitScripts
+                         
+                         if game.Players.localPlayer.Position == game.Workspace.Hitboxes.Hitbox1.Position then
+                              scripts.script1.Parent = game.Players.localPlayer
+                         end
+                         
+                         if game.Players.localPlayer.Position == game.Workspace.Hitboxes.Hitbox2.Position then
+                              scripts.script2.Parent = game.Players.localPlayer
+                         end
+                         
+                         if game.Players.localPlayer.Position == game.Workspace.Hitboxes.Hitbox3.Position then
+                              scripts.script3.Parent = game.Players.localPlayer
+                         end
+                         
+                         if game.Players.localPlayer.Position == game.Workspace.Hitboxes.Hitbox4.Position then
+                              scripts.script4.Parent = game.Players.localPlayer
+                         end
+                         
+                         if game.Players.localPlayer.Position == game.Workspace.Hitboxes.Hitbox5.Position then
+                              scripts.script5.Parent = game.Players.localPlayer
+                         end
+                         
+                         if game.Players.localPlayer.Position == game.Workspace.Hitboxes.Hitbox6.Position then
+                              scripts.script6.Parent = game.Players.localPlayer
+                         end
+                         
+                         
+                         
+                         while true do 
+                              game.Workspace.Hitboxes:GetChildren("Part").Position = ranPlr3
+                         until
+                              Hitboxes.Position.x = Bottle.Position
+                         end
+                         
+                         
+                         
+                         while true do
+                              game.ReplicatedStorage.Values.timeUntilLose = 5
+                         end
+                         
+                         if game.ReplicatedStorage.Values.timeUntilLose == 0 then
+                              ranPlr2.Health = 0
+                         end
+                    end
+                    wait(5)
+                    local ranBullet = math.Random("1", "2", "3", "4", "5", "6", "7", "8", "9", "10")
+                    
+                    Gun.Parent = game.Workspace.Bottle
+                    
+                    Gun.BulletValue.value = ranBullet
+               end)
+          end
+          Bottle.Hitbox.Touched:Connect(plrT)
+          game.Workspace.Hitboxes.Hitbox1.MouseButton1Click:Connect(PlayerClick1)
+          game.Workspace.Hitboxes.Hitbox2.MouseButton1Click:Connect(PlayerClick2)
+          game.Workspace.Hitboxes.Hitbox3.MouseButton1Click:Connect(PlayerClick3)
+          game.Workspace.Hitboxes.Hitbox4.MouseButton1Click:Connect(PlayerClick4)
+          game.Workspace.Hitboxes.Hitbox5.MouseButton1Click:Connect(PlayerClick5)
+          game.Workspace.Hitboxes.Hitbox6.MouseButton1Click:Connect(PlayerClick6)
+     end
+end
+
